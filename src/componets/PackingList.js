@@ -6,16 +6,16 @@ const initialItems = [
   { id: 2, description: "Socks", quantity: 12, packed: true }
 ];
 
-export default function PackingList({
+function PackingList({
   items,
   handleToggleItem,
   handleDeleteItem,
-  sortedItem
+  handleClearList
 }) {
   const [sortBy, setSortBy] = useState("input");
 
   let sortedItem = [];
-
+ 
   if (sortBy == "input") {
     sortedItem = items;
   }
@@ -27,7 +27,7 @@ export default function PackingList({
     sortedItem = items.slice().sort((i1, i2) => {
       return i1.description.localeCompare(i2.description);
     });
-
+  
     console.log("sortedItems");
     console.log(sortedItem);
   }
@@ -40,7 +40,7 @@ export default function PackingList({
 
   return (
     <div className="list">
-      <ul>
+      <ul>  
         {sortedItem.map((eItem) => {
           return (
             <Item
@@ -64,8 +64,10 @@ export default function PackingList({
           <option value="desc">Sort Alphabatically</option>
           <option value="packed">Sort By Packed Status</option>
         </select>
-        <button onClick={}>Clear List</button>
+        <button onClick={handleClearList}>Clear List</button>
       </div>
     </div>
   );
 }
+
+export default PackingList

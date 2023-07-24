@@ -1,4 +1,6 @@
-export default function Stats({ items }) {
+import React from 'react'
+
+function Stats({ items }) {
   if (!items.length) {
     return (
       <p className="stats">
@@ -16,9 +18,12 @@ export default function Stats({ items }) {
       <em>
         {percentage === 100
           ? "You got everything! Ready to go.✈️"
-          : `💼 You have {totalItems} items on your list, and you already packed{" "}
-        {numPacked} ({percentage}%)`}
+          : `💼 You have ${totalItems} items on your list, and you already packed${""}
+        ${numPacked} (${percentage}%)`}
       </em>
     </footer>
   );
 }
+
+
+export default Stats

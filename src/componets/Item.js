@@ -1,4 +1,6 @@
-export default function Item({ item, handleToggleItem, handleDeleteItem }) {
+import React from 'react'
+
+function Item({ item, handleToggleItem, handleDeleteItem }) {
   return (
     <li>
       <input
@@ -13,3 +15,5 @@ export default function Item({ item, handleToggleItem, handleDeleteItem }) {
     </li>
   );
 }
+
+export default Item

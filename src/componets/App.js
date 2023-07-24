@@ -6,12 +6,8 @@ import Form from "./Form";
 import Stats from "./Stats";
 import PackingList from "./PackingList";
 
-export default function App() {
+function App() {
   const [items, setItems] = useState([]);
-  // items: [{id, desc, quantity, packed}, {id, desc, quantity, packed}]
-  // add, update, delete
-
-  // item: {id, desc, quantity, packed}
 
   function handleAddItems(item) {
     setItems([...items, item]);
@@ -37,7 +33,7 @@ export default function App() {
     if (confirmed) setItems([]);
   }
 
-  return (
+  return ( 
     <div className="App">
       <Header />
       <Form onAddItems={handleAddItems} />
@@ -51,3 +47,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App

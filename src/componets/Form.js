@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Form({ onAddItems }) {
+function Form({ onAddItems }) {
   let [desc, setDesc] = useState("");
   let [qty, setQty] = useState(1);
 
@@ -46,3 +46,6 @@ export default function Form({ onAddItems }) {
     </form>
   );
 }
+
+export default Form
+
